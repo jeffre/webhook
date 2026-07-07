@@ -1,0 +1,13 @@
+# Start: docker compose up --build -d
+
+services:
+  webhook:
+    build: .
+    volumes:
+      - ./config:/config
+      - /var/run/docker.sock:/var/run/docker.sock
+      - $HOME/.ssh:/home/webhook/.ssh:ro
+      - $WEBHOOK_WORKDIR:$WEBHOOK_WORKDIR
+    restart: unless-stopped
+    environment:
+      REDEPLOY_HMAC: $REDEPLOY_HMAC
