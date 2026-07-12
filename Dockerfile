@@ -15,8 +15,6 @@ RUN wget -qO- https://github.com/adnanh/webhook/releases/download/$WEBHOOK_VER/w
 
 RUN adduser -D -u ${RUN_UID} webhook
 
-WORKDIR ${WEBHOOK_WORKDIR:-/}
-
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 
 EXPOSE 9000
