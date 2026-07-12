@@ -3,6 +3,8 @@
 services:
   webhook:
     build: .
+    env_file:
+      - .env
     volumes:
       - ./config:/config
       - /var/run/docker.sock:/var/run/docker.sock

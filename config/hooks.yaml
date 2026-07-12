@@ -1,6 +1,6 @@
 - id: redeploy
   execute-command: /config/scripts/redeploy.sh
-  command-working-directory: .
+  command-working-directory: '{{getenv "WEBHOOK_WORKDIR" | js}}'
   pass-arguments-to-command:
     - source: payload
       name: head_commit.id
