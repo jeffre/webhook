@@ -17,8 +17,8 @@ BODY='{
   },
   "ref": "refs/heads/main",
   "repository": {
-    "full_name": "owner/reponame",
-    "name": "reponame"
+    "full_name": "owner/repo",
+    "name": "repo"
   }
 }
 '
